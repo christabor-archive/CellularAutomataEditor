@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Cellular Automata - Customizer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css">
+    <style type="text/css">
+        body {
+            padding: 2em 0;
+            margin: 0;
+            background-color: #f1f1f1;
+        }
+        #controls {
+            padding: 1em;
+        }
+        .fade.in {
+            opacity: 0.7;
+        }
+        canvas {
+            background-color: #fff;
+            border: 2px solid #ccc;
+            padding: 0;
+            margin: 0 auto;
+            display: block;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <div id="controls">
+                    <p><a class="btn btn-primary" data-toggle="modal" href='#rules-list'>Edit CA rules</a></p>
+                    <hr>
+                    <form id="options" action="/" class="form">
+                        <fieldset>
+                            <legend>Edit canvas size</legend>
+                            <label>Width: <input type="text" value="800" name="width" class="form-control input-sm"></label><br>
+                            <label>Height: <input type="text" value="600" name="height" class="form-control input-sm"></label><br>
+                            <label>Cell size: <input type="text" value="8" name="cellsize" class="form-control input-sm"></label><br>
+                            <button class="btn btn-success btn-md">Update</button>
+                        </fieldset>
+                    </form>
+                </div>
+
+            </div>
+            <div class="col-md-9">
+                <canvas id="canvas" width="100%" height="100%"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="rules-list">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Edit existing CA Rules...</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="rules" class="text-center"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info btn-sm" data-dismiss="modal">Close</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+    <script src="catest.js"></script>
+</body>
+</html>
